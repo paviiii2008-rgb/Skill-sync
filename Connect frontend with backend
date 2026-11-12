@@ -1,0 +1,57 @@
+
+const API_URL = "http://localhost:3000/api/exchanges";
+
+// Submit exchange request
+document.getElementById("exchangeForm")
+.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const teach = document.getElementById("teach").value;
+    const learn = document.getElementById("learn").value;
+
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                teach: teach,
+                learn: learn
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+        document.getElementById("result").textContent =
+            data.message;
+
+        this.reset();
+
+    } catch (error) {
+        document.getElementById("result").textContent =
+            "Error: " + error.message;
+    }
+});
+
+// Display exchange requests
+async function getExchanges() {
+    try {
+        const response = await fetch(API_URL);
+        const exchanges = await response.json();
+
+        console.log("Exchange Requests:", exchanges);
+
+    } catch (error) {
+        console.log("Unable to fetch requests");
+    }
+}
+
+getExchanges();
