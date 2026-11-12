@@ -1,0 +1,15 @@
+
+{
+  "name": "skillsync-backend",
+  "version": "1.0.0",
+  "description": "SkillSync Skill Exchange Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
