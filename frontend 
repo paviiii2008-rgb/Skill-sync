@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSync - Skill Exchange Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>SkillSync</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#explore">Explore Skills</a>
+        <a href="#exchange">Exchange</a>
+        <a href="#about">About</a>
+    </nav>
+    <button onclick="showLogin()">Login</button>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Learn Skills.<br>Share Knowledge.</h1>
+        <p>Connect with people, exchange skills and grow together.</p>
+        <button onclick="scrollToSkills()">Explore Skills</button>
+    </div>
+</section>
+
+<section class="categories" id="explore">
+    <h2>Explore Popular Skills</h2>
+
+    <div class="skill-container">
+
+        <div class="skill-card">
+            <h3>💻 Programming</h3>
+            <p>Learn Java, Python and Web Development.</p>
+            <button onclick="selectSkill('Programming')">Learn More</button>
+        </div>
+
+        <div class="skill-card">
+            <h3>🎨 UI/UX Design</h3>
+            <p>Explore creative designs and user experience.</p>
+            <button onclick="selectSkill('UI/UX Design')">Learn More</button>
+        </div>
+
+        <div class="skill-card">
+            <h3>📸 Photography</h3>
+            <p>Improve photography and editing skills.</p>
+            <button onclick="selectSkill('Photography')">Learn More</button>
+        </div>
+
+        <div class="skill-card">
+            <h3>📱 Digital Marketing</h3>
+            <p>Learn social media and marketing strategies.</p>
+            <button onclick="selectSkill('Digital Marketing')">Learn More</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="exchange" id="exchange">
+    <h2>Start Your Skill Exchange</h2>
+    <p>Share what you know and learn something new.</p>
+
+    <form id="exchangeForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="teach" placeholder="Skill You Can Teach" required>
+        <input type="text" id="learn" placeholder="Skill You Want to Learn" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+</section>
+
+<footer id="about">
+    <h2>SkillSync</h2>
+    <p>A Peer-to-Peer Skill Exchange Platform</p>
+    <p>Learn Together | Share Together | Grow Together</p>
+    <p>© 2026 SkillSync. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
